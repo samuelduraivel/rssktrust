@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramakrishna Sharada Shakti Kendra</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #f8f9fa;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        .logo h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #b30000;
+        }
+        .logo p {
+            margin: 5px 0 0 0;
+            font-size: 14px;
+            color: #555;
+            font-style: italic;
+        }
+        nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        
+        /* Hero Section with Slider */
+        .hero {
+            position: relative;
+            padding: 100px 50px;
+            text-align: center;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 300px;
+        }
+        .slider-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease-in-out; 
+        }
+        .slide.active {
+            opacity: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            background: rgba(0, 0, 0, 0.65); 
+            padding: 40px;
+            border-radius: 8px;
+            color: white;
+            max-width: 800px;
+        }
+        .hero h2 {
+            font-size: 32px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+        .hero p {
+            font-size: 18px;
+            margin: 0 auto;
+        }
+
+        .quick-facts {
+            background-color: #b30000;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .content-section {
+            padding: 50px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .content-section h2 {
+            color: #b30000;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 30px;
+            gap: 20px;
+        }
+        .card {
+            width: calc(50% - 30px);
+            padding: 20px;
+            background: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            border-top: 4px solid #b30000;
+            margin-bottom: 20px;
+        }
+        .card h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        .info-block {
+            margin-bottom: 40px;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        
+        /* Updated Service Items for Large Infrastructure Images */
+        .service-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .service-item {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 25px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            overflow: hidden; /* Ensures the image respects the border-radius */
+            border: 1px solid #e0e0e0;
+        }
+        .service-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 1px solid #eee;
+        }
+        .service-item span {
+            padding: 15px 20px;
+            font-size: 15px;
+            color: #444;
+            display: block;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 50px;
+            text-align: center;
+            font-size: 14px;
+        }
+        footer h3 {
+            color: #f8f9fa;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+            nav {
+                margin-top: 15px;
+            }
+            nav a {
+                display: inline-block;
+                margin: 5px 10px;
+            }
+            .hero {
+                padding: 60px 20px;
+            }
+            .hero-content {
+                padding: 20px;
+            }
+            .hero h2 {
+                font-size: 24px;
+            }
+            .content-section {
+                padding: 30px 20px;
+            }
+            footer {
+                padding: 30px 20px;
+            }
+            .card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <h1>Ramakrishna Sharada Shakti Kendra</h1> 
+        <p>"Inspiring Life and Message of Sri Ramakrishna, Holy Mother Sharada Devi, and Swami Vivekananda"</p> 
+    </div>
+    <nav>
+        <a href="#about">About Us</a>
+        <a href="#work">Our Work</a>
+        <a href="#involved">Get Involved</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<div class="quick-facts">
+    Established: September 21, 1996 | Irrevocable Public Charitable Trust | Donations Recognized under Section 80G 
+</div>
+
+<section class="hero">
+    <div class="slider-container">
+        <img class="slide active" src="rssk_hospital.png" alt="RSSK Hospital">
+        <img class="slide" src="rssk_oldage_home.png" alt="RSSK Old Age Home">
+    </div>
+    
+    <div class="hero-content">
+        <h2>Welcome to Our Official Website</h2>
+        <p>We are dedicated to spreading spiritual knowledge, moral education, and social development based on the timeless teachings of the Holy Trio.</p>
+    </div>
+</section>
+
+<section id="about" class="content-section">
+    <div class="info-block">
+        <h2>About Us</h2> 
+        <p>Ramakrishna Sharada Shakti Kendra was founded on September 21, 1996, by Shri M. Vasudeva Hande, who served as the Author and Founder of the Trust. Over the years, the Trust has evolved to adapt to changing circumstances and continue its charitable mission.</p>
+        <p>Our activities benefit all sections of the public without distinction of religion, caste, creed, or other denominations, ultimately serving the whole world.</p>
+    </div>
+
+    <div class="info-block">
+        <h2>Vision & Mission</h2> 
+        <p><strong>Vision:</strong> To stimulate people's involvement in social and cultural development while preserving and propagating the spiritual heritage of India.</p>
+        <p><strong>Mission:</strong></p> 
+        <ul>
+            <li>To broadcast the inspiring life and message of Sri Ramakrishna, Holy Mother Sharada Devi, and Swami Vivekananda.</li>
+            <li>To provide opportunities for spiritual growth through meditation, discourses, and study circles.</li>
+            <li>To support youth through conventions and thought-provoking activities.</li>
+            <li>To promote literacy and knowledge through libraries and publications.</li>
+            <li>To foster moral education and ethical values in society.</li>
+            <li>To offer a path for those desiring to renounce social life for spiritual pursuit.</li>
+        </ul>
+    </div>
+</section>
+
+<section id="work" class="content-section" style="background-color: #fff;">
+    <h2>Objectives & Activities</h2> 
+    <div class="grid">
+        <div class="card">
+            <h3>Healthcare & Welfare</h3>
+            <ul class="service-list">
+                <li class="service-item">
+                    <img src="rssk_hospital.png" alt="Hospital Services">
+                    <span>Operating a dedicated hospital to provide medical care to the community.</span>
+                </li>
+                <li class="service-item">
+                    <img src="rssk_oldage_home.png" alt="Old Age Home">
+                    <span>Running an old age home to offer shelter, care, and dignity to the elderly.</span>
+                </li>
+                <li class="service-item">
+                    <img src="rssk_ambulance.png" alt="Ambulance Services">
+                    <span>Providing accessible ambulance services for medical emergencies.</span>
+                </li>
+                <li class="service-item">
+                    <img src="rssk_orphanage.png" alt="Orphanage Services">
+                    <span>Supporting an orphanage to provide a safe, nurturing environment and education for children.</span>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="card">
+            <h3>Spiritual Activities</h3> 
+            <ul>
+                <li>Organizing and conducting spiritual camps for the general public.</li>
+                <li>Holding sessions on meditation, spiritual topics, discussions, and discourses.</li>
+            </ul>
+        </div>
+        
+        <div class="card">
+            <h3>Youth Development</h3> 
+            <ul>
+                <li>Organizing youth conventions for students to encourage moral and spiritual values.</li>
+                <li>Conducting thought-provoking competitions to stimulate intellectual and spiritual growth.</li>
+            </ul>
+        </div>
+        
+        <div class="card">
+            <h3>Publications & Education</h3> 
+            <ul>
+                <li>Printing and publishing books and booklets containing the teachings of the Holy Trio.</li>
+                <li>Organizing and conducting public libraries to promote knowledge and learning.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="involved" class="content-section">
+    <div class="info-block">
+        <h2>Get Involved</h2> 
+        <ul>
+            <li><strong>Donations:</strong> Monetary contributions (eligible for 80G tax benefit), donations in kind, endowments, or program sponsorships.</li>
+            <li><strong>Volunteering:</strong> Help organize spiritual camps, assist in library management, support youth conventions, or contribute to publication efforts.</li>
+            <li><strong>Participation:</strong> Attend spiritual camps, meditation sessions, study circles, and youth conventions.</li>
+            <li><strong>Collaboration:</strong> We welcome partnerships with social organizations, educational institutions, and cultural bodies.</li>
+        </ul>
+    </div>
+
+    <div class="info-block">
+        <h2>Board of Trustees</h2> 
+        <p><em>(Current Board as of March 2025)</em></p>
+        <ul>
+            <li>Shri Vasudeva R</li>
+            <li>Shri Dikshith S</li>
+            <li>Shri Dennis T Varghese</li>
+            <li>Shri Prashanth A</li>
+            <li>Shri Felix T Varghese</li>
+        </ul>
+    </div>
+</section>
+
+<footer id="contact">
+    <h3>Contact Us</h3> 
+    <p><strong>Registered Office:</strong> No. 1436, 1st Cross, Chandra Layout, Vijayanagar, Bangalore - 560 040, Karnataka, India</p>
+    <p><strong>Alternative Address:</strong> No. 22, 1st Main, Nagarbhavi, Bangalore - 560 072</p>
+    <br>
+    <p><strong>Working Hours:</strong> Monday to Saturday: 10:00 AM - 8:00 PM | Sunday: Closed (unless for special events)</p>
+    <br>
+    <p><strong>Inquiries:</strong> <br>
+    Donations: Contact the Treasurer | Programs: Contact the Secretary | General Info: Contact the President</p>
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        
+        if(slides.length > 0) {
+            setInterval(() => {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }, 4000); 
+        }
+    });
+</script>
+
+</body>
+</html>
